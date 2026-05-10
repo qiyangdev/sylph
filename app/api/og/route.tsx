@@ -23,12 +23,6 @@ export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
     const parameters: Parameters = Object.fromEntries(searchParams);
     const { title } = parameters;
-    console.log(parameters);
-
-    /*
-     * Finally we are fetching the font file from the public directory.
-     */
-    const inter = fetch(new URL("../../../public/assets/inter/regular.ttf", import.meta.url)).then((res) => res.arrayBuffer());
 
     return new ImageResponse(
       <div
@@ -43,6 +37,7 @@ export async function GET(request: Request) {
 
           /* style */
           fontSize: "24px",
+          fontFamily: "sans-serif",
           letterSpacing: "-0.47px",
           backgroundColor: "black",
         }}
@@ -69,13 +64,6 @@ export async function GET(request: Request) {
       {
         width: 1200,
         height: 600,
-        fonts: [
-          {
-            name: "Inter",
-            data: await inter,
-            weight: 400,
-          },
-        ],
       },
     );
   } catch {

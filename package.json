@@ -8,9 +8,9 @@
     "start": "next start",
     "postbuild": "next-sitemap",
     "mdx:timestamps": "node ./scripts/update-mdx-timestamps",
-    "lint:style": "pnpm exec stylelint \"**/*.css\" --fix",
-    "lint:biome": "pnpm exec biome check --fix --unsafe .",
-    "lint:prettier": "pnpm exec prettier . --write --log-level warn",
+    "lint:style": "pnpm exec stylelint \"app/**/*.css\" \"components/**/*.css\" \"styles/**/*.css\" --fix",
+    "lint:biome": "pnpm exec biome check --fix --unsafe app components lib public scripts styles types *.json *.mjs *.ts *.tsx",
+    "lint:prettier": "pnpm exec prettier app components lib public scripts styles types *.json *.mjs *.ts *.tsx --write --log-level warn",
     "lint": "pnpm run lint:style && pnpm run lint:prettier && pnpm run lint:biome"
   },
   "dependencies": {

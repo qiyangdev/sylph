@@ -3,14 +3,14 @@
   "vcs": {
     "enabled": true,
     "clientKind": "git",
-    "useIgnoreFile": true
+    "useIgnoreFile": false
   },
   "files": {
     "ignoreUnknown": false,
-    "includes": ["**"]
+    "includes": ["**", "!**/.git", "!**/.next", "!**/.pnpm-store", "!**/.vercel", "!**/node_modules"]
   },
   "formatter": {
-    "includes": ["**", "!**/.next"],
+    "includes": ["**", "!**/.git", "!**/.next", "!**/.pnpm-store", "!**/.vercel", "!**/node_modules"],
     "enabled": true,
     "indentStyle": "space",
     "indentWidth": 2,
@@ -32,7 +32,7 @@
     }
   },
   "linter": {
-    "includes": ["**", "!**/.next"],
+    "includes": ["**", "!**/.git", "!**/.next", "!**/.pnpm-store", "!**/.vercel", "!**/node_modules"],
     "enabled": true,
     "rules": {
       "recommended": true,

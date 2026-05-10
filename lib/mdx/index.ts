@@ -1,9 +1,7 @@
-import type { Post } from "@/types/post";
-
 import fs from "fs";
-import path from "path";
-
 import matter from "gray-matter";
+import path from "path";
+import type { Post } from "@/types/post";
 
 function readFile(filePath: string): Post | null {
   try {

@@ -1,21 +1,149 @@
-@import url("@radix-ui/colors/gray.css");
-@import url("@radix-ui/colors/gray-alpha.css");
-@import url("@radix-ui/colors/gray-dark.css");
-@import url("@radix-ui/colors/gray-dark-alpha.css");
-@import url("@radix-ui/colors/pink.css");
-@import url("@radix-ui/colors/pink-alpha.css");
-@import url("@radix-ui/colors/pink-dark.css");
-@import url("@radix-ui/colors/pink-dark-alpha.css");
-@import url("@radix-ui/colors/yellow.css");
-@import url("@radix-ui/colors/yellow-alpha.css");
-@import url("@radix-ui/colors/yellow-dark.css");
-@import url("@radix-ui/colors/yellow-dark-alpha.css");
-@import url("@radix-ui/colors/black-alpha.css");
-@import url("@radix-ui/colors/white-alpha.css");
+@import "tailwindcss" important;
+@import "@radix-ui/colors/gray.css";
+@import "@radix-ui/colors/gray-alpha.css";
+@import "@radix-ui/colors/gray-dark.css";
+@import "@radix-ui/colors/gray-dark-alpha.css";
+@import "@radix-ui/colors/pink.css";
+@import "@radix-ui/colors/pink-alpha.css";
+@import "@radix-ui/colors/pink-dark.css";
+@import "@radix-ui/colors/pink-dark-alpha.css";
+@import "@radix-ui/colors/yellow.css";
+@import "@radix-ui/colors/yellow-alpha.css";
+@import "@radix-ui/colors/yellow-dark.css";
+@import "@radix-ui/colors/yellow-dark-alpha.css";
+@import "@radix-ui/colors/black-alpha.css";
+@import "@radix-ui/colors/white-alpha.css";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-gray-1: var(--gray-1);
+  --color-gray-2: var(--gray-2);
+  --color-gray-3: var(--gray-3);
+  --color-gray-4: var(--gray-4);
+  --color-gray-5: var(--gray-5);
+  --color-gray-6: var(--gray-6);
+  --color-gray-7: var(--gray-7);
+  --color-gray-8: var(--gray-8);
+  --color-gray-9: var(--gray-9);
+  --color-gray-10: var(--gray-10);
+  --color-gray-11: var(--gray-11);
+  --color-gray-12: var(--gray-12);
+  --color-gray-a1: var(--gray-a1);
+  --color-gray-a2: var(--gray-a2);
+  --color-gray-a3: var(--gray-a3);
+  --color-gray-a4: var(--gray-a4);
+  --color-gray-a5: var(--gray-a5);
+  --color-gray-a6: var(--gray-a6);
+  --color-gray-a7: var(--gray-a7);
+  --color-gray-a8: var(--gray-a8);
+  --color-gray-a9: var(--gray-a9);
+  --color-gray-a10: var(--gray-a10);
+  --color-gray-a11: var(--gray-a11);
+  --color-gray-a12: var(--gray-a12);
+  --color-black-a1: var(--black-a1);
+  --color-black-a2: var(--black-a2);
+  --color-black-a3: var(--black-a3);
+  --color-black-a4: var(--black-a4);
+  --color-black-a5: var(--black-a5);
+  --color-black-a6: var(--black-a6);
+  --color-black-a7: var(--black-a7);
+  --color-black-a8: var(--black-a8);
+  --color-black-a9: var(--black-a9);
+  --color-black-a10: var(--black-a10);
+  --color-black-a11: var(--black-a11);
+  --color-black-a12: var(--black-a12);
+  --color-white-a1: var(--white-a1);
+  --color-white-a2: var(--white-a2);
+  --color-white-a3: var(--white-a3);
+  --color-white-a4: var(--white-a4);
+  --color-white-a5: var(--white-a5);
+  --color-white-a6: var(--white-a6);
+  --color-white-a7: var(--white-a7);
+  --color-white-a8: var(--white-a8);
+  --color-white-a9: var(--white-a9);
+  --color-white-a10: var(--white-a10);
+  --color-white-a11: var(--white-a11);
+  --color-white-a12: var(--white-a12);
+  --color-pink-1: var(--pink-1);
+  --color-pink-2: var(--pink-2);
+  --color-pink-3: var(--pink-3);
+  --color-pink-4: var(--pink-4);
+  --color-pink-5: var(--pink-5);
+  --color-pink-6: var(--pink-6);
+  --color-pink-7: var(--pink-7);
+  --color-pink-8: var(--pink-8);
+  --color-pink-9: var(--pink-9);
+  --color-pink-10: var(--pink-10);
+  --color-pink-11: var(--pink-11);
+  --color-pink-12: var(--pink-12);
+  --color-pink-a1: var(--pink-a1);
+  --color-pink-a2: var(--pink-a2);
+  --color-pink-a3: var(--pink-a3);
+  --color-pink-a4: var(--pink-a4);
+  --color-pink-a5: var(--pink-a5);
+  --color-pink-a6: var(--pink-a6);
+  --color-pink-a7: var(--pink-a7);
+  --color-pink-a8: var(--pink-a8);
+  --color-pink-a9: var(--pink-a9);
+  --color-pink-a10: var(--pink-a10);
+  --color-pink-a11: var(--pink-a11);
+  --color-pink-a12: var(--pink-a12);
+  --color-yellow-1: var(--yellow-1);
+  --color-yellow-2: var(--yellow-2);
+  --color-yellow-3: var(--yellow-3);
+  --color-yellow-4: var(--yellow-4);
+  --color-yellow-5: var(--yellow-5);
+  --color-yellow-6: var(--yellow-6);
+  --color-yellow-7: var(--yellow-7);
+  --color-yellow-8: var(--yellow-8);
+  --color-yellow-9: var(--yellow-9);
+  --color-yellow-10: var(--yellow-10);
+  --color-yellow-11: var(--yellow-11);
+  --color-yellow-12: var(--yellow-12);
+  --color-yellow-a1: var(--yellow-a1);
+  --color-yellow-a2: var(--yellow-a2);
+  --color-yellow-a3: var(--yellow-a3);
+  --color-yellow-a4: var(--yellow-a4);
+  --color-yellow-a5: var(--yellow-a5);
+  --color-yellow-a6: var(--yellow-a6);
+  --color-yellow-a7: var(--yellow-a7);
+  --color-yellow-a8: var(--yellow-a8);
+  --color-yellow-a9: var(--yellow-a9);
+  --color-yellow-a10: var(--yellow-a10);
+  --color-yellow-a11: var(--yellow-a11);
+  --color-yellow-a12: var(--yellow-a12);
+  --color-background: var(--bg);
+  --color-foreground: var(--fg);
+  --color-muted: var(--muted);
+  --color-hover: var(--hover);
+  --color-border: var(--border);
+  --color-scrollbar-thumb: var(--scrollbar-thumb);
+  --color-scrollbar-track: var(--scrollbar-track);
+  --color-selection-background: var(--selection-background);
+  --color-selection-foreground: var(--selection-foreground);
+  --color-highlight-background: var(--highlight-background);
+  --color-highlight-foreground: var(--highlight-foreground);
+  --color-kbd-background: var(--kbd-background);
+  --color-kbd-foreground: var(--kbd-foreground);
+  --color-kbd-border: var(--kbd-border);
+  --font-inter: inter, sans-serif;
+  --font-apple: -apple-system, blinkmacsystemfont, "Segoe UI", sans-serif;
+  --radius-small: 4px;
+  --radius-base: 8px;
+  --radius-large: 12px;
+}
+
+@utility text-small {
+  font-size: 12px;
+  letter-spacing: 0.01px;
+}
+
+@utility text-default {
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: -0.09px;
+}
 
 @layer base {
   /*
@@ -57,14 +185,18 @@
   }
 
   html {
-    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
     scrollbar-gutter: stable;
-    scrollbar-width: thin;
     scroll-behavior: smooth;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+    scrollbar-width: thin;
   }
 
   html {
-    @apply text-default text-foreground bg-background;
+    font-size: 14px;
+    line-height: 21px;
+    color: var(--fg);
+    letter-spacing: -0.09px;
+    background-color: var(--bg);
 
     h1,
     h2,
@@ -72,40 +204,45 @@
     h4,
     h5,
     h6 {
-      @apply font-medium;
+      font-weight: 500;
     }
 
     h2,
     h3,
     sub,
     sup {
-      @apply text-muted;
+      color: var(--muted);
     }
 
     sub {
-      @apply text-small;
+      font-size: 12px;
+      letter-spacing: 0.01px;
     }
 
     a {
-      @apply transition hover:opacity-50;
+      transition: opacity 150ms ease;
+    }
+
+    a:hover {
+      opacity: 0.5;
     }
 
     ol {
-      @apply list-decimal;
+      list-style-type: decimal;
     }
 
     ul {
-      @apply list-disc;
+      list-style-type: disc;
     }
 
     kbd {
-      @apply mx-1;
-
       display: inline-block;
       min-width: 20px;
       height: 20px;
       min-height: 20px;
       padding: 0 6px;
+      margin-right: 4px;
+      margin-left: 4px;
       font-size: 12px;
       line-height: 20px;
       text-align: center;
@@ -117,17 +254,17 @@
 
   article {
     h1 + h2 {
-      margin-top: 4px !important;
+      margin-top: 4px;
     }
 
     h1 + p,
     h2 + p {
-      margin-top: 8px !important;
+      margin-top: 8px;
     }
 
     figure + h1,
     p + h1 {
-      margin-top: 48px !important;
+      margin-top: 48px;
     }
 
     p:not(:first-child),
@@ -150,19 +287,29 @@
     */
 
     [data-highlight] {
-      @apply relative;
+      position: relative;
     }
 
     [data-highlight]::before {
-      @apply absolute inset-0 -inset-x-1 -z-10 bg-transparent transition scale-y-[1.1] content-[""] duration-500;
+      position: absolute;
+      inset: 0 -4px;
+      z-index: -10;
+      content: "";
+      background-color: transparent;
+      transform: scaleY(1.1);
+      transition-duration: 500ms;
+      transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
     }
 
     [data-highlight="true"]::before {
-      @apply bg-highlight-background text-highlight-foreground scale-y-110 !important;
+      color: var(--highlight-foreground);
+      background-color: var(--highlight-background);
+      transform: scaleY(1.1);
     }
 
     [data-highlight="false"]::before {
-      @apply bg-transparent scale-y-100;
+      background-color: transparent;
+      transform: scaleY(1);
     }
 
     /* 
@@ -172,7 +319,7 @@
     .footnotes {
       position: relative;
       padding-top: 16px;
-      margin-top: 64px !important;
+      margin-top: 64px;
       border-top: 1px solid var(--border);
     }
 
@@ -180,12 +327,12 @@
       position: relative;
       display: block;
       padding: 0 0 0 4px;
-      margin-top: 16px !important;
+      margin-top: 16px;
       list-style: none;
     }
 
     .footnotes li {
-      margin-top: 0 !important;
+      margin-top: 0;
     }
 
     .footnotes ol li {
@@ -244,6 +391,10 @@
   */
 
   html {
+    pre [data-line] {
+      margin-top: 0;
+    }
+
     code[data-line-numbers] {
       counter-reset: line;
     }
@@ -275,7 +426,7 @@
       margin-right: 2px;
       margin-left: 2px;
       text-align: center;
-      background-color: var(--kbd-background) !important;
+      background-color: var(--kbd-background);
       border-radius: 4px;
       box-shadow: 0 0 0 1px var(--kbd-border);
     }
@@ -291,10 +442,6 @@
       padding: 16px;
       overflow-x: auto;
       font-size: 12px;
-
-      [data-line] {
-        margin-top: 0 !important;
-      }
     }
 
     figure {

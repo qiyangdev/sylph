@@ -28,7 +28,7 @@ export async function GET(request: Request) {
     /*
      * Finally we are fetching the font file from the public directory.
      */
-    const inter = fetch(new URL("/public/assets/inter/regular.ttf", import.meta.url)).then((res) => res.arrayBuffer());
+    const inter = fetch(new URL("../../../public/assets/inter/regular.ttf", import.meta.url)).then((res) => res.arrayBuffer());
 
     return new ImageResponse(
       <div

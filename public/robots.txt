@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://next-sylph-portfolio.vercel.app/
+Host: https://qiyang.dev
 
 # Sitemaps
-Sitemap: https://next-sylph-portfolio.vercel.app/sitemap.xml
+Sitemap: https://qiyang.dev/sitemap.xml

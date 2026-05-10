@@ -1,7 +1,11 @@
 import type { MDXComponents } from "mdx/types";
 import type { MDXRemoteProps } from "next-mdx-remote/rsc";
+import { MDXRemote } from "next-mdx-remote/rsc";
+import React from "react";
+import rehypePrettyCode from "rehype-pretty-code";
+import rehypeSlug from "rehype-slug";
+import remarkGfm from "remark-gfm";
 import type { PluggableList } from "unified";
-
 import FootnoteBackReference from "@/components/footnote/back-reference";
 import FootnoteForwardReference from "@/components/footnote/forward-reference";
 import MDXImage from "@/components/image";
@@ -9,11 +13,15 @@ import Link from "@/components/link";
 import Preview from "@/components/preview";
 import { cn } from "@/lib/cn";
 
-import { MDXRemote } from "next-mdx-remote/rsc";
-import React from "react";
-import rehypePrettyCode from "rehype-pretty-code";
-import rehypeSlug from "rehype-slug";
-import remarkGfm from "remark-gfm";
+type ElementProps = {
+  children?: React.ReactNode;
+  href?: string;
+  id?: string;
+};
+
+function getElementProps(node: React.ReactNode): ElementProps | null {
+  return React.isValidElement<ElementProps>(node) ? node.props : null;
+}
 
 const components: MDXComponents = {
   PreviewExample: () => {
@@ -62,11 +70,7 @@ const components: MDXComponents = {
     <td className={cn("border border-border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right", className)} {...props} />
   ),
   ol: ({ className, ...props }: React.HTMLAttributes<HTMLOListElement>) => {
-    if (
-      React.Children.toArray(props.children).some(
-        (child) => React.isValidElement(child) && (child as React.ReactElement).props.id?.includes("user-content-fn-"),
-      )
-    ) {
+    if (React.Children.toArray(props.children).some((child) => getElementProps(child)?.id?.includes("user-content-fn-"))) {
       return (
         <ol data-footnotes>
           <div className="mt-6 mb-2 text-muted text-small">Footnotes</div>
@@ -82,21 +86,12 @@ const components: MDXComponents = {
       return (
         <li id={props.id}>
           {React.Children.map(children, (child) => {
-            if (React.isValidElement(child)) {
+            if (React.isValidElement<ElementProps>(child)) {
               if (child.type === "p") {
-                const href = child.props.children.find((child: React.ReactNode) => {
-                  if (React.isValidElement(child)) {
-                    return React.isValidElement(child) && "props" in child && (child.props as { href?: string }).href?.includes("user-content-fnref-");
-                  }
-                  return false;
-                })?.props.href;
-
-                const filtered = child.props.children.filter((child: React.ReactNode) => {
-                  if (React.isValidElement(child)) {
-                    return !(React.isValidElement(child) && "props" in child && (child.props as { href?: string }).href?.includes("user-content-fnref-"));
-                  }
-                  return true;
-                });
+                const childNodes = React.Children.toArray(child.props.children);
+                const backReference = childNodes.find((node) => getElementProps(node)?.href?.includes("user-content-fnref-"));
+                const href = getElementProps(backReference)?.href ?? "";
+                const filtered = childNodes.filter((node) => !getElementProps(node)?.href?.includes("user-content-fnref-"));
 
                 return <FootnoteBackReference href={href}>{filtered}</FootnoteBackReference>;
               }
@@ -117,7 +112,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
   };
 }
 
-export function MDX(props: JSX.IntrinsicAttributes & MDXRemoteProps) {
+export function MDX(props: React.JSX.IntrinsicAttributes & MDXRemoteProps) {
   return (
     <MDXRemote
       {...props}

@@ -3,6 +3,7 @@
   "extends": ["stylelint-config-standard", "stylelint-config-recess-order"],
   "rules": {
     "at-rule-no-unknown": null,
+    "import-notation": "string",
     "at-rule-empty-line-before": [
       "always",
       {
